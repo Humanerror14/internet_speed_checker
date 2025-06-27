@@ -69,6 +69,7 @@ if st.button("🚀 MULAI TES"):
     try:
         # Proses pengecekan kecepatan internet
         stt = speedtest.Speedtest()
+        stt.get_best_server()
         download = stt.download() / 1_000_000
         upload = stt.upload() / 1_000_000
         # Kosongkan status loading
