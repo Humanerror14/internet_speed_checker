@@ -1,5 +1,5 @@
 import streamlit as st
-import speedtest
+from fast_speedtest import FastSpeedtest
 
 # 🌌 Custom CSS styling ala Speedtest Ookla
 st.markdown("""
@@ -68,11 +68,9 @@ if st.button("🚀 MULAI TES"):
 
     try:
         # Proses pengecekan kecepatan internet
-        stt = speedtest.Speedtest()
-        stt.get_best_server()
-        download = stt.download() / 1_000_000  # convert bits to Mbps
-        upload = stt.upload() / 1_000_000
-
+        fast = FastSpeedtest()
+        download = fast.download() / 1_000_000  # convert bits to Mbps
+        status_placeholder.empty()
         # Kosongkan status loading
         status_placeholder.empty()
 
@@ -80,10 +78,6 @@ if st.button("🚀 MULAI TES"):
         st.markdown('<div class="result-box">', unsafe_allow_html=True)
         st.markdown('<div class="speed-label">📥 Download:</div>', unsafe_allow_html=True)
         st.markdown(f'<div class="speed-value">{download:.2f} Mbps</div>', unsafe_allow_html=True)
-
-        st.markdown('<div class="speed-label">📤 Upload:</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="speed-value">{upload:.2f} Mbps</div>', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
 
     except Exception as e:
         status_placeholder.empty()
