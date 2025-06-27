@@ -124,9 +124,10 @@ if start_test:
         status_placeholder.empty()
 
         # Tampilkan hasil
+       # Tampilkan hasil
         st.markdown('<div class="result-box">', unsafe_allow_html=True)
         st.markdown('<div class="speed-label">🛰️ Server:</div>', unsafe_allow_html=True)
-        st.markdown(f'<div class="speed-value">{best['host']}` ({best['sponsor']}, {best['country']}</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="speed-value">{best["host"]} ({best["sponsor"]}, {best["country"]})</div>', unsafe_allow_html=True)
         st.markdown('<div class="speed-label">📶 Latency:</div>', unsafe_allow_html=True)
         st.markdown(f'<div class="speed-value">{ping:.2f} ms</div>', unsafe_allow_html=True)
         st.markdown('<div class="speed-label">📥 Download:</div>', unsafe_allow_html=True)
