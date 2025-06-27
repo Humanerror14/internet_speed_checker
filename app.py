@@ -91,7 +91,9 @@ st.markdown("""
 start_test = st.button("🚀 MULAI TES", help="Klik untuk memulai tes jaringan")
 
 # Placeholder untuk hasil tes
+status_placeholder = st.empty()
 placeholder = st.empty()
+
 
 # Jika tombol ditekan
 if start_test:
@@ -99,6 +101,9 @@ if start_test:
     with placeholder.container():
         st.markdown('<div class="center"><div class="loader"></div></div>', unsafe_allow_html=True)
         time.sleep(2.5)
+
+     # Hapus status setelah selesai
+    status_placeholder.empty()
 
     # Simulasi hasil
     download = random.uniform(20, 80)
