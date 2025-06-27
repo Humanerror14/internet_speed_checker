@@ -110,11 +110,7 @@ if start_test:
     status_placeholder.empty()
     loader_placeholder.empty()
 
-    # Simulasi hasil
-    download = random.uniform(20, 80)
-    upload = random.uniform(5, 30)
-    ping = random.uniform(10, 40)
-    
+
     try:
         # Proses pengecekan kecepatan internet
         stt = speedtest.Speedtest()
