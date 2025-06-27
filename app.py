@@ -119,30 +119,24 @@ if start_test:
         upload = stt.upload() / 1_000_000
         best = stt.get_best_server()
         ping = best['latency']
-
-        # Tampilkan hasil dalam satu blok HTML
-result_html = f"""
-<div class="result-box">
-    <div class="speed-label">🛰️ Server:</div>
-    <div class="speed-value">{best["host"]} ({best["sponsor"]}, {best["country"]})</div>
-
-    <div class="speed-label">📶 Latency:</div>
-    <div class="speed-value">{ping:.2f} ms</div>
-
-    <div class="speed-label">📥 Download:</div>
-    <div class="speed-value">{download:.2f} Mbps</div>
-
-    <div class="speed-label">📤 Upload:</div>
-    <div class="speed-value">{upload:.2f} Mbps</div>
-</div>
-"""
-
-st.markdown(result_html, unsafe_allow_html=True)
-
+        
         # Kosongkan status loading
         status_placeholder.empty()
 
-    
+        # Tampilkan hasil
+       # Tampilkan hasil
+        st.markdown('<div class="result-box">', unsafe_allow_html=True)
+        st.markdown('<div class="speed-label">🛰️ Server:</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="speed-value">{best["host"]} ({best["sponsor"]}, {best["country"]})</div>', unsafe_allow_html=True)
+        st.markdown('<div class="speed-label">📶 Latency:</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="speed-value">{ping:.2f} ms</div>', unsafe_allow_html=True)
+        st.markdown('<div class="speed-label">📥 Download:</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="speed-value">{download:.2f} Mbps</div>', unsafe_allow_html=True)
+        st.markdown('<div class="speed-label">📤 Upload:</div>', unsafe_allow_html=True)
+        st.markdown(f'<div class="speed-value">{upload:.2f} Mbps</div>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+
+
     except Exception as e:
         status_placeholder.empty()
         st.error(f"❌ Gagal melakukan tes: {e}")
