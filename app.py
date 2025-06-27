@@ -1,5 +1,8 @@
 import streamlit as st
 import speedtest
+import time
+import random
+
 
 # 🌌 Custom CSS styling ala Speedtest Ookla
 st.markdown("""
