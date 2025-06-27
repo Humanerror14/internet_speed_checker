@@ -98,15 +98,13 @@ loader_placeholder = st.empty()
 
 # Jika tombol ditekan
 if start_test:
-    # Tampilkan animasi loader
+  if start_test:
+    # Placeholder untuk status dan loader
+    status_placeholder = st.empty()
+    loader_placeholder = st.empty()
+
     status_placeholder.markdown("🔄 Sedang melakukan pengujian jaringan...")
     loader_placeholder.markdown('<div class="center"><div class="loader"></div></div>', unsafe_allow_html=True)
-
-    
-     # Hapus status setelah selesai
-    status_placeholder.empty()
-    loader_placeholder.empty()
-
 
     try:
         # Proses pengecekan kecepatan internet
