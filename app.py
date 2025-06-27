@@ -92,7 +92,6 @@ start_test = st.button("🚀 MULAI TES", help="Klik untuk memulai tes jaringan")
 
 # Placeholder untuk hasil tes
 status_placeholder = st.empty()
-placeholder = st.empty()
 loader_placeholder = st.empty()
 
 
