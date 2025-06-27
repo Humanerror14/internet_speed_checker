@@ -99,8 +99,12 @@ loader_placeholder = st.empty()
 # Jika tombol ditekan
 if start_test:
     # Tampilkan animasi loader
+    status_placeholder = st.empty()
+    loader_placeholder = st.empty()
+
     status_placeholder.markdown("🔄 Sedang melakukan pengujian jaringan...")
     loader_placeholder.markdown('<div class="center"><div class="loader"></div></div>', unsafe_allow_html=True)
+
     
      # Hapus status setelah selesai
     status_placeholder.empty()
