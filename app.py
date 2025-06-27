@@ -68,9 +68,9 @@ if st.button("🚀 MULAI TES"):
 
     try:
         # Proses pengecekan kecepatan internet
-        fast = Fastcli()
-        download = fast.download() / 1_000_000  # convert bits to Mbps
-        status_placeholder.empty()
+        stt = speedtest.Speedtest()
+        download = stt.download() / 1_000_000
+        upload = stt.upload() / 1_000_000
         # Kosongkan status loading
         status_placeholder.empty()
 
