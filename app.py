@@ -1,5 +1,5 @@
 import streamlit as st
-import fastcli
+import speedtest
 
 # 🌌 Custom CSS styling ala Speedtest Ookla
 st.markdown("""
