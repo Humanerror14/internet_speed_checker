@@ -1,5 +1,5 @@
 import streamlit as st
-from fast_speedtest import FastSpeedtest
+import fastcli
 
 # 🌌 Custom CSS styling ala Speedtest Ookla
 st.markdown("""
@@ -68,7 +68,7 @@ if st.button("🚀 MULAI TES"):
 
     try:
         # Proses pengecekan kecepatan internet
-        fast = FastSpeedtest()
+        fast = Fastcli()
         download = fast.download() / 1_000_000  # convert bits to Mbps
         status_placeholder.empty()
         # Kosongkan status loading
