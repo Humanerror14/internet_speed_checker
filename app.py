@@ -87,13 +87,23 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Placeholder loading status
-status_placeholder = st.empty()
+# Buat tombol tes
+start_test = st.button("🚀 MULAI TES", help="Klik untuk memulai tes jaringan")
 
-if placeholder.button("🚀 MULAI TES", key="start", help="Klik untuk memulai tes jaringan"):
-    # Simulasi loader animasi
-    with st.container():
+# Placeholder untuk hasil tes
+placeholder = st.empty()
+
+# Jika tombol ditekan
+if start_test:
+    # Tampilkan animasi loader
+    with placeholder.container():
         st.markdown('<div class="center"><div class="loader"></div></div>', unsafe_allow_html=True)
         time.sleep(2.5)
+
+    # Simulasi hasil
+    download = random.uniform(20, 80)
+    upload = random.uniform(5, 30)
+    ping = random.uniform(10, 40)
     try:
         # Proses pengecekan kecepatan internet
         stt = speedtest.Speedtest()
