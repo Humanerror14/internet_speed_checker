@@ -98,9 +98,11 @@ placeholder = st.empty()
 # Jika tombol ditekan
 if start_test:
     # Tampilkan animasi loader
-    with placeholder.container():
-        st.markdown('<div class="center"><div class="loader"></div></div>', unsafe_allow_html=True)
-        time.sleep(2.5)
+    status_placeholder.markdown("🔄 Sedang melakukan pengujian jaringan...")
+    loader_placeholder.markdown('<div class="center"><div class="loader"></div></div>', unsafe_allow_html=True)
+
+    time.sleep(2.5)  # Simulasi pengecekan
+
 
      # Hapus status setelah selesai
     status_placeholder.empty()
