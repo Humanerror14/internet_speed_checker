@@ -106,6 +106,15 @@ if start_test:
     status_placeholder.markdown("🔄 Sedang melakukan pengujian jaringan...")
     loader_placeholder.markdown('<div class="center"><div class="loader"></div></div>', unsafe_allow_html=True)
 
+      # ✅ Loader dan status dihapus jika berhasil
+        status_placeholder.empty()
+        loader_placeholder.empty()
+
+        # Tampilkan hasil
+        result_html = f"""<div class="result-box"> ... </div>"""
+        st.markdown(result_html, unsafe_allow_html=True)
+
+
     try:
         # Proses pengecekan kecepatan internet
         stt = speedtest.Speedtest()
