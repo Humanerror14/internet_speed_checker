@@ -89,10 +89,11 @@ st.markdown("""
 # Placeholder loading status
 status_placeholder = st.empty()
 
-if st.button("🚀 MULAI TES"):
-    with status_placeholder:
-        st.write("⌛ Sedang mengetes jaringan kamu...")
-
+if placeholder.button("🚀 MULAI TES", key="start", help="Klik untuk memulai tes jaringan"):
+    # Simulasi loader animasi
+    with st.container():
+        st.markdown('<div class="center"><div class="loader"></div></div>', unsafe_allow_html=True)
+        time.sleep(2.5)
     try:
         # Proses pengecekan kecepatan internet
         stt = speedtest.Speedtest()
