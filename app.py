@@ -76,6 +76,10 @@ if st.button("🚀 MULAI TES"):
         status_placeholder.empty()
 
         # Tampilkan hasil
+        best = stt.get_best_server()
+        st.markdown(f"🛰️ Server: `{best['host']}` ({best['sponsor']}, {best['country']})")
+        ping = best['latency']
+        st.markdown(f"📶 Ping: `{ping:.2f} ms`")
         st.markdown('<div class="result-box">', unsafe_allow_html=True)
         st.markdown('<div class="speed-label">📥 Download:</div>', unsafe_allow_html=True)
         st.markdown(f'<div class="speed-value">{download:.2f} Mbps</div>', unsafe_allow_html=True)
