@@ -19,19 +19,43 @@ st.markdown("""
         }
 
         .stButton > button {
+            display: inline-block;
             background-color: #6c63ff;
             color: white;
-            font-size: 24px;
-            padding: 20px 40px;
-            border-radius: 100px;
+            font-size: 20px;
+            font-weight: bold;
             border: none;
-            box-shadow: 0 0 20px #6c63ff88;
+            border-radius: 100px;
+            padding: 20px 40px;
+            cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 0 20px #6c63ff80;
         }
 
         .stButton > button:hover {
             background-color: #8a85ff;
             box-shadow: 0 0 30px #8a85ffcc;
+        }
+         .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #6c63ff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+         @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
         }
 
         .result-box {
